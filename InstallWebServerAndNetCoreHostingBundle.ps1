@@ -5,4 +5,7 @@ $WebFile = "https://download.visualstudio.microsoft.com/download/pr/5b681079-006
  
 Clear-Host
 
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")
+
 Start-Process -Wait -ArgumentList "/silent" -PassThru -FilePath "$env:APPDATA\$ProcName"
